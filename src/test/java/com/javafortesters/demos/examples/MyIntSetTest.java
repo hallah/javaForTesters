@@ -33,9 +33,9 @@ public class MyIntSetTest {
 	}
 
 	/**
-	 * @param set
+	 * @param set The Integer Set object from which we get the array.
 	 *
-	 * @return
+	 * @return Int array from the input IntegerSet.
 	 */
 	private int[] getArrayFromIntegerSet(IntegerSet set) {
 		int returnArray[] = new int[set.size()];
@@ -46,10 +46,10 @@ public class MyIntSetTest {
 	}
 
 	/**
-	 * @param expected
-	 * @param actual
+	 * @param expected The array representing the expected result.
+	 * @param actual The array representing the actual result.
 	 *
-	 * @return
+	 * @return boolean representing whether the arrays are equal
 	 */
 	private boolean assertArraysEqual(int expected[], int actual[]) {
 		if (expected == null && actual == null) {

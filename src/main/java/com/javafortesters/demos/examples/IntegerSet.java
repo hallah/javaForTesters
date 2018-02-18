@@ -4,9 +4,6 @@ public class IntegerSet {
 
 	private transient int array[];
 
-	// Dummy value to associate with an Object in the backing Map
-	private static final Object PRESENT = new Object();
-
 	/**
 	 * Constructs a new, empty set; the backing <tt>HashMap</tt> instance has
 	 * default initial capacity (16) and load factor (0.75).
@@ -16,9 +13,9 @@ public class IntegerSet {
 	}
 
 	/**
-	 * @param integers
+	 * @param integers Array of ints to instantiate the Set
 	 */
-	public IntegerSet(int integers[]) {
+	IntegerSet(int integers[]) {
 		array = new int[0];
 		for (int i : integers) {
 			add(i);
@@ -26,9 +23,9 @@ public class IntegerSet {
 	}
 
 	/**
-	 * @param index
+	 * @param index Index of the element desired from the set.
 	 *
-	 * @return
+	 * @return int value of the desired element in the set.
 	 */
 	public int get(int index) {
 		return array[index];
@@ -52,24 +49,18 @@ public class IntegerSet {
 	 * unchanged and returns <tt>false</tt>.
 	 *
 	 * @param i element to be added to this set
-	 *
-	 * @return <tt>true</tt> if this set did not already contain the specified
-	 * element
+	 *          element
 	 */
-	public boolean add(int i) {
-		int y = 0;
+	private void add(int i) {
 		for (int x : array) {
-			if (i == array[y]) {
-				return false;
+			if (i == x) {
+				return;
 			}
-			y++;
 		}
-		int z = array.length;
 		int arrayCopy[] = new int[array.length + 1];
 		System.arraycopy(array, 0, arrayCopy, 0, array.length);
 		arrayCopy[array.length] = i;
 		array = new int[arrayCopy.length];
 		System.arraycopy(arrayCopy, 0, array, 0, arrayCopy.length);
-		return true;
 	}
 }
