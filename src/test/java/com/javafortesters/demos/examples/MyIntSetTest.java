@@ -41,7 +41,7 @@ public class MyIntSetTest {
 			return false;
 		}
 
-		if (actual== null) {
+		if (actual == null) {
 			return false;
 		}
 
