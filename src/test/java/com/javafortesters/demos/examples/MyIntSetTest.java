@@ -8,7 +8,7 @@ public class MyIntSetTest {
 	public void primativeSetTest() {
 		int count[] = { 34, 22, 10, 60, 30, 22 };
 		int expected[] = { 34, 22, 10, 60, 30 };
-		int actual[] = SetDemo.integerSet(count);
+		int actual[] = getArrayFromIntegerSet(new IntegerSet(count));
 		Assert.assertArrayEquals("Expected set of ints does not match actual.", expected, actual);
 	}
 
@@ -16,7 +16,7 @@ public class MyIntSetTest {
 	public void negativePrimativeSetDifferentLengthTest() {
 		int count[] = { 34, 22, 10, 60, 30, 22 };
 		int expected[] = { 34, 22, 10, 60, 30, 99 };
-		int actual[] = SetDemo.integerSet(count);
+		int actual[] = getArrayFromIntegerSet(new IntegerSet(count));
 		if (assertArraysEqual(expected, actual)) {
 			Assert.fail("Expected set of ints matches actual when it shouldn't.");
 		}
@@ -26,12 +26,31 @@ public class MyIntSetTest {
 	public void negativePrimativeSetDifferentElementTest() {
 		int count[] = { 34, 22, 10, 60, 30, 22 };
 		int expected[] = { 34, 22, 10, 60, 99 };
-		int actual[] = SetDemo.integerSet(count);
+		int actual[] = getArrayFromIntegerSet(new IntegerSet(count));
 		if (assertArraysEqual(expected, actual)) {
 			Assert.fail("Expected set of ints matches actual when it shouldn't.");
 		}
 	}
 
+	/**
+	 * @param set
+	 *
+	 * @return
+	 */
+	private int[] getArrayFromIntegerSet(IntegerSet set) {
+		int returnArray[] = new int[set.size()];
+		for (int i = 0; i < set.size(); i++) {
+			returnArray[i] = set.get(i);
+		}
+		return returnArray;
+	}
+
+	/**
+	 * @param expected
+	 * @param actual
+	 *
+	 * @return
+	 */
 	private boolean assertArraysEqual(int expected[], int actual[]) {
 		if (expected == null && actual == null) {
 			return true;
