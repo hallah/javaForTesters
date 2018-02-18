@@ -1,0 +1,42 @@
+For Mac:
+Select the IntelliJ IDEA options menu
+Select Preferences...
+In the Editor > Code Style 
+To the right of Scheme there is a settings icon. Click this and select import scheme
+Select Intellij IDEA code style XML
+Select the file listed above (in this section)
+Select the CATestFormatter and OK through the remaining pages
+For PC:
+From the Window menu drop down, select Preferences
+In the Editor > Code Style > Java section, select Manage...
+Select Import... in the Code Style Schemes
+Select Intellij IDEA code style XML
+Select the file listed above (in this section)
+Select the IntelliJ CATestFormatter and OK through the remaining pages
+Setting Macros
+When code is submitted it needs to be 
+saved
+Formatted 
+Unused imports removed
+Among other things. 
+A simple macro can be created to complete all of these when you hit "? + s" or "ctrl + s"
+For Mac:
+On the main menu, choose Edit | Macros | Start Macro Recording 
+Hit "? + option + l"
+Hit "? + option + o"
+Hit "? + s"
+Choose Edit | Macros | Stop Macro Recording - Alternatively you can hit the record icon in the bottom right of the screen
+In the Enter Macro Name dialog specify the name as Format and Save
+Hit "?," or choose Intellij IDEA | Preferences and go to Keymap
+Expands the Macros node and right click Format and Save and select Add Keyboard Shortcut
+Hit "? + s" and accept when asked to override save all. 
+For PC:
+On the main menu, choose Edit | Macros | Start Macro Recording 
+Hit "ctrl + alt + l"
+Hit "ctrl + alt + o"
+Hit "ctrl + s"
+Choose Edit | Macros | Stop Macro Recording - Alternatively you can hit the record icon in the bottom right of the screen
+In the Enter Macro Name dialog specify the name as Format and Save
+Choose File | Settings and go to Keymap
+Expands the Macros node and right click Format and Save and select Add Keyboard Shortcut
+Hit "ctrl + s" and accept when asked to override save all. 
