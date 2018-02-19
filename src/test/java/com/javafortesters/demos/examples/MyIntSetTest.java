@@ -47,7 +47,7 @@ public class MyIntSetTest {
 
 	/**
 	 * @param expected The array representing the expected result.
-	 * @param actual The array representing the actual result.
+	 * @param actual   The array representing the actual result.
 	 *
 	 * @return boolean representing whether the arrays are equal
 	 */
