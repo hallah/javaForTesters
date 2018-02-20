@@ -10,7 +10,8 @@ public class TestAppEnvironmentTest {
 		Assert.assertEquals("Environment url should equal http://192.123.0.3:67", "http://192.123.0.3:67", TestAppEnv.getUrl());
 	}
 
-	@Test public void canGetDomainAndPortStatically() {
+	@Test
+	public void canGetDomainAndPortStatically() {
 		Assert.assertEquals("Just the domain", "192.123.0.3", TestAppEnv.DOMAIN);
 		Assert.assertEquals("Just the port", "67", TestAppEnv.PORT);
 	}
