@@ -3,11 +3,15 @@ package com.javafortesters.demos.examples;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class MyIntSetTest {
 	@Test
 	public void primativeSetTest() {
 		int count[] = { 34, 22, 10, 60, 30, 22 };
-		int expected[] = { 34, 22, 10, 60, 30 };
+		int expected[] = getExpectedArrayFromActualSet(count);
 		int actual[] = getArrayFromIntegerSet(new IntegerSet(count));
 		Assert.assertArrayEquals("Expected set of ints does not match actual.", expected, actual);
 	}
@@ -75,5 +79,29 @@ public class MyIntSetTest {
 			i++;
 		}
 		return true;
+	}
+
+	private int[] getExpectedArrayFromActualSet(int[] intArray) {
+		Set<Integer> expectedSet = new HashSet<>(Arrays.asList(toObject(intArray)));
+		Integer objects[] = expectedSet.toArray(new Integer[expectedSet.size()]);
+		return toPrimitive(objects);
+	}
+
+	private Integer[] toObject(int[] intArray) {
+
+		Integer[] result = new Integer[intArray.length];
+		for (int i = 0; i < intArray.length; i++) {
+			result[i] = Integer.valueOf(intArray[i]);
+		}
+		return result;
+	}
+
+	private int[] toPrimitive(Integer[] IntegerArray) {
+
+		int[] result = new int[IntegerArray.length];
+		for (int i = 0; i < IntegerArray.length; i++) {
+			result[i] = IntegerArray[i].intValue();
+		}
+		return result;
 	}
 }

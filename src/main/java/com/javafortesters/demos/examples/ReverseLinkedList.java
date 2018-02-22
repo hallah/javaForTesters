@@ -9,16 +9,16 @@ public class ReverseLinkedList {
 		even
 	}
 
-	public static LinkedList reverseLinkedList(LinkedList linkedList, ReverseType type) {
+	public static LinkedList<Integer> reverseLinkedList(LinkedList<Integer> linkedList, ReverseType type) {
 		for (int i = 0; i < linkedList.size(); i++) {
 			switch (type) {
 			case odd:
-				if (((Integer) linkedList.get(i) & 1) == 0) {
+				if ((linkedList.get(i) & 1) == 0) {
 					linkedList.remove(i);
 				}
 				break;
 			case even:
-				if (!(((Integer) linkedList.get(i) & 1) == 0)) {
+				if (!((linkedList.get(i) & 1) == 0)) {
 					linkedList.remove(i);
 				}
 				break;
