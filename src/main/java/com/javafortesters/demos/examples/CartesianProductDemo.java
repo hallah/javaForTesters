@@ -27,11 +27,7 @@ public class CartesianProductDemo {
 			}
 			cartesianProduct = internalList;
 		}
-		Map<String, String>[] returnProduct = new HashMap[cartesianProduct.size()];
-		for (int i = 0; i < cartesianProduct.size(); i++) {
-			returnProduct[i] = cartesianProduct.get(i);
-		}
 
-		return returnProduct;
+		return cartesianProduct.toArray(new HashMap[cartesianProduct.size()]);
 	}
 }
