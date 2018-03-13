@@ -1,6 +1,5 @@
 package com.javafortesters.demos.examples;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -19,6 +18,31 @@ public class MyCustomSetTest {
 		Object expected[] = actualSet.toArray(new String[actualSet.size()]);
 		MyCustomSet customSet = new MyCustomSet(collection);
 		Object actual[] = customSet.toArray();
-		Assert.assertArrayEquals("Expected array does not equal actual.", expected, actual);
+		assertArrayEquals("Expected array does not equal actual.", expected, actual);
+	}
+
+	private boolean assertArrayEquals(String message, Object[] expected, Object[] actual) {
+		if (expected == null && actual == null) {
+			return true;
+		}
+		if (expected == null || actual == null) {
+			return false;
+		}
+		if (expected.length != actual.length) {
+			return false;
+		}
+		for (Object o : expected) {
+			boolean found = false;
+			for (Object i : actual) {
+				if (o.equals(i)) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
