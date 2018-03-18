@@ -34,8 +34,28 @@ public class MyCartesianProductTest {
 
 		Map<String, String>[] expected = getExpected();
 
-		Assert.assertArrayEquals("Actual Cartesion Product does not equal expected.", expected, actual);
+		arrayEquals(expected, actual);
+	}
 
+	private void arrayEquals(Map<String, String>[] expected, Map<String, String>[] actual) {
+		if (expected == null && actual == null) {
+			return;
+		}
+		Assert.assertNotNull("Expected is null and actual isn't.", expected);
+		Assert.assertNotNull("Actual is null and expected isn't.", actual);
+		Assert.assertEquals("Expected array size does not equal actual.", expected.length, actual.length);
+		for (Map<String, String> expectedMap : expected) {
+			boolean found = false;
+			for (Map<String, String> actualMap : actual) {
+				if (expectedMap.equals(actualMap)) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				Assert.fail("Expected map not found: [" + expectedMap.toString() + "].  Actual maps : [" + actual.toString() + "].");
+			}
+		}
 	}
 
 	private Map<String, String>[] getExpected() {
